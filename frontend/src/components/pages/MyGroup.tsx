@@ -12,7 +12,7 @@ import EmojiPicker, { EmojiClickData, Theme } from "emoji-picker-react";
 
 interface Message {
   id: string;
-  sender_id: string;
+  sender_id?: string;
   sender_name: string;
   body?: string;
   timestamp: string;
