@@ -58,7 +58,7 @@ export async function fetchGroups() {
 }
 
 export async function createGroup(payload: { name: string; description?: string; owner_id: string; member_ids: string[] }) {
-  const { data } = await api.post("/groups/", payload);
+  const { data } = await api.post("/groups", payload);
   return data;
 }
 
