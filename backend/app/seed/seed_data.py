@@ -1,5 +1,4 @@
 from sqlalchemy import select
-
 from app.core.security import get_password_hash
 from app.database.session import SessionLocal, engine
 from app.models import EmployeeProfile, Role, RoleName, User, Base
@@ -7,15 +6,6 @@ from app.models import EmployeeProfile, Role, RoleName, User, Base
 QUICK_ACCESS_PASSWORD = "1234"
 
 SEED_USERS = [
-    # ... (existing entries)
-]
-
-
-def seed() -> None:
-    # Create tables first
-    Base.metadata.create_all(bind=engine)
-    
-    db = SessionLocal()
     {
         "email": "krishna@workflowpro.com",
         "full_name": "Krishna",
@@ -80,6 +70,9 @@ def seed() -> None:
 
 
 def seed() -> None:
+    # Create tables first
+    Base.metadata.create_all(bind=engine)
+    
     db = SessionLocal()
     try:
         for role_name in RoleName:
