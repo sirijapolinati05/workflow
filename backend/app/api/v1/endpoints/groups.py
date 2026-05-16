@@ -14,7 +14,7 @@ from app.services.crud import CRUDService
 
 router = APIRouter()
 
-@router.get("/", response_model=PaginatedResponse[GroupResponse])
+@router.get("", response_model=PaginatedResponse[GroupResponse])
 def list_groups(
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=10, ge=1, le=100),
@@ -54,7 +54,7 @@ def list_groups(
     return PaginatedResponse.create(items=results, total=total or 0, page=page, page_size=page_size)
 
 
-@router.post("/", response_model=GroupResponse)
+@router.post("", response_model=GroupResponse)
 def create_group(
     payload: GroupCreateRequest,
     db: Session = Depends(get_db),
