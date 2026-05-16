@@ -1,7 +1,8 @@
 from sqlalchemy import select
 from app.core.security import get_password_hash
 from app.database.session import SessionLocal, engine
-from app.models import EmployeeProfile, Role, RoleName, User, Base
+from app.database.base import Base
+from app.models import EmployeeProfile, Role, RoleName, User
 
 QUICK_ACCESS_PASSWORD = "1234"
 
