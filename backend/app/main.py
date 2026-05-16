@@ -5,8 +5,13 @@ import os
 
 from app.api.v1.router import api_router
 from app.core.config import settings
+from app.database.base import Base
+from app.database.session import engine
 # from app.middleware.audit import AuditMiddleware
 from app.websocket.routes import websocket_router
+
+# Create tables on startup
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title=settings.app_name, version="1.0.0")
 
