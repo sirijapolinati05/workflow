@@ -57,7 +57,7 @@ Copy each example file and set real secrets:
 If you use the included `docker-compose.yml`, backend `.env` should match it:
 
 ```env
-DATABASE_URL=postgresql+psycopg://pavan:Sirija2004@localhost:5433/workflow_db
+DATABASE_URL=postgresql+psycopg://user:password@localhost:5433/workflow_db
 REDIS_URL=redis://localhost:6379/0
 CORS_ORIGINS=http://localhost:5173,http://localhost:5174,http://localhost:8081
 ```
@@ -138,14 +138,14 @@ Open separate terminals and run in this order:
 ### Terminal 1: database and redis
 
 ```bash
-cd C:\Users\pavan\OneDrive\Desktop\react-native
+cd /path/to/your/project
 docker compose up -d postgres redis
 ```
 
 ### Terminal 2: backend
 
 ```bash
-cd C:\Users\pavan\OneDrive\Desktop\react-native\backend
+cd /path/to/your/project/backend
 py -3.11 -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
@@ -157,7 +157,7 @@ uvicorn app.main:app --reload
 ### Terminal 3: web frontends
 
 ```bash
-cd C:\Users\pavan\OneDrive\Desktop\react-native
+cd /path/to/your/project
 npm install
 npm run dev:web
 ```
@@ -165,7 +165,7 @@ npm run dev:web
 ### Terminal 4: mobile
 
 ```bash
-cd C:\Users\pavan\OneDrive\Desktop\react-native
+cd /path/to/your/project
 npm run dev:mobile
 ```
 
@@ -195,8 +195,8 @@ npx expo export
 
 ```sql
 CREATE DATABASE workflow_db;
-CREATE USER pavan WITH ENCRYPTED PASSWORD 'Sirija2004';
-GRANT ALL PRIVILEGES ON DATABASE workflow_db TO pavan;
+CREATE USER your_user WITH ENCRYPTED PASSWORD 'your_password';
+GRANT ALL PRIVILEGES ON DATABASE workflow_db TO your_user;
 ```
 
 ## Azure Blob Storage
