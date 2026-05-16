@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "WorkFlow Pro",
+    "slug": "workflow-pro",
+    "scheme": "workflowpro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
+
