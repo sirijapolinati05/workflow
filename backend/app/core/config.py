@@ -22,7 +22,8 @@ class Settings(BaseSettings):
 
 
     cors_origins: Annotated[list[str], NoDecode] = Field(
-        default_factory=lambda: ["http://localhost:5173", "http://localhost:8081"]
+        default_factory=lambda: ["http://localhost:5173", "http://localhost:8081"],
+        alias="CORS_ORIGINS"
     )
 
     @field_validator("cors_origins", mode="before")
